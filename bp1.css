@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+/* ===== (Global rules) ===== */
+html { margin: 2%; }                 /* Περιθώριο γύρω από όλη τη σελίδα */
+body {
+  margin: auto;                      /* Κεντράρει τη σελίδα */
+  max-width: 860px;                  /* Μέγιστο πλάτος της σελίδας */
+  font-family: "Helvetica Neue", "Liberation Sans", Calibri, Arial, sans-serif;
+  line-height: 1.5;                  /* Απόσταση ανάμεσα στις γραμμές */
+  
+}
+
+
+header { text-align: center; }
+
+/* Μεγάλος τίτλος στην αρχική σελίδα */
+.startpage h1 {
+  font-family: "Merienda One", cursive;     /* Γραμματοσειρά από το Google Fonts */
+  font-size: 500%;                          /* Πολύ μεγάλος τίτλος */
+  margin: 0.2em 0 0 0;
+}
+.startpage h1::first-letter {               /* Η πρώτη γραμματοσειρά με διαφορετικό χρώμα */
+  color: #00A6F4;
+}
+
+/* Tagline με δύο γραμμές (πάνω και κάτω) */
+.tagline {
+  font-size: 120%;
+  padding: 0.5em 0;
+  border-top: 3px double #00AF64;           /* Διπλή γραμμή πάνω */
+  border-bottom: 3px double #00AF64;        /* Διπλή γραμμή κάτω */
+  margin: 0.5em 0 1em 0;
+}
+
+/* Header-wrap: το λογότυπο και ο τίτλος κεντραρισμένα κάθετα και οριζόντια */
+.hwrap {
+  display: flex;                 /* Χρήση flexbox */
+  flex-wrap: wrap;               /* Επιτρέπει να πάνε σε δεύτερη γραμμή αν μικρύνει η οθόνη */
+  align-items: center;           /* Κάθετη στοίχιση */
+  justify-content: center;       /* Οριζόντια στοίχιση στο κέντρο */
+  gap: 1rem;                     /* Απόσταση μεταξύ τους */
+}
+
+/* Εικόνα λογότυπου – μέγεθος όπως στο βιβλίο */
+.startpage .logo {
+  width: 235px;
+  height: 189px;
+  object-fit: contain;           /* Να χωράει χωρίς παραμόρφωση */
+}
+
+/* ===== Κουτάκια (μενού) στην αρχική σελίδα ===== */
+.menu {
+  margin: 0 0 1em 0;
+  padding: 1.2em;
+  background-color: #F5F5F5;     /* Ανοιχτό γκρι φόντο */
+  text-align: center;
+  /* Οβάλ σχήμα με στρογγυλεμένες γωνίες */
+  border-radius: 56%;
+  /* Εσωτερική σκιά για εφέ βάθους */
+  box-shadow: inset 0 20px #0072411a;
+}
+
+/* ===== Στυλ για συνδέσμους (links) ===== */
+.menu__länk:link,
+.menu__länk:visited {
+  text-decoration: none;         /* Χωρίς υπογράμμιση */
+  color: #000;                   /* Μαύρο χρώμα */
+}
+.menu__länk:focus,
+.menu__länk:hover {
+  text-decoration: underline;    /* Υπογράμμιση όταν περνάει το ποντίκι */
+  color: #A6F200;                /* Ανοιχτό πράσινο χρώμα */
+}
+.menu__länk:active {
+  text-decoration: underline;
+  color: #FF4900;                /* Πορτοκαλί χρώμα όταν κάνεις κλικ */
+}
+
+/* ===== Διάταξη με flex (όπως λέει το βιβλίο) ===== */
+.startpage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;   /* Χώρος ανάμεσα στα στοιχεία */
+}
+.startpage header,
+.startpage footer { flex: 0 0 100%; } /* Header και footer να πιάνουν όλο το πλάτος */
+
+/* Τα τέσσερα κουτάκια στη σειρά (4 στήλες) */
+.startpage .menu { flex: 0 0 20%; }
+
+/* ===== Responsive design (προσαρμογή) ===== */
+/* Όταν μικραίνει η οθόνη σε tablet */
+@media (max-width: 860px) {
+  .startpage .menu { flex: 0 0 48%; } /* 2 στήλες */
+}
+/* Όταν μικραίνει πολύ (κινητό) */
+@media (max-width: 480px) {
+  .hwrap { justify-content: center; }
+  .startpage .menu { flex: 0 0 100%; } /* Μία στήλη */
+}
+
+/* ===== Στιλ για τις υποσελίδες (όχι αρχική) ===== */
+.content {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #e5e5e5;
+}
+
+/* Footer */
+footer {
+  margin-top: 2em;
+  padding: 0.5em 0;
+  color: #999;
+  text-align: center;
+}
+body {
+    background-image: url(bild/bp1.jpg);
+    background-size: cover;
+    background-position: center;
+}
